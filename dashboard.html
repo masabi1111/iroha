@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>لوحة التحكم - إروها</title>
+    <title>لوحة التعلم - إروها</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,10 +20,10 @@
       </button>
       <nav class="sidebar__nav" aria-label="القائمة الرئيسية">
         <a class="is-active" href="#overview">نظرة عامة</a>
-        <a href="#tasks">المهام</a>
-        <a href="#team">الفريق</a>
-        <a href="#reports">التقارير</a>
-        <a href="#settings">الإعدادات</a>
+        <a href="#tasks">الدروس</a>
+        <a href="#team">خطة الأسبوع</a>
+        <a href="#reports">التقدم</a>
+        <a href="#settings">الإشعارات</a>
       </nav>
       <div class="sidebar__footer">
         <a class="btn btn--outline" href="index.html">العودة للرئيسية</a>
@@ -33,88 +33,88 @@
     <div class="dashboard__main">
       <header class="dashboard__header">
         <div>
-          <h1>مرحبا، سارة</h1>
-          <p>اطّلع على أحدث مؤشرات أداء مشاريع فريق التسويق.</p>
+          <h1>مرحبًا، ليان</h1>
+          <p>تابع تقدمك في مستوى المبتدئين وتعرف على الدروس المقترحة لك اليوم.</p>
         </div>
         <div class="dashboard__actions">
-          <button class="btn btn--ghost" type="button">+ مهمة جديدة</button>
-          <button class="btn" type="button">مشاركة</button>
+          <button class="btn btn--ghost" type="button">متابعة الدرس الحالي</button>
+          <button class="btn" type="button">جدولة مراجعة</button>
         </div>
       </header>
 
       <section class="cards" id="overview" aria-label="مؤشرات أساسية">
         <article class="card card--metric">
-          <span class="card__label">نسبة الإنجاز</span>
-          <strong class="card__value">76%</strong>
-          <span class="card__trend up">+8% منذ الشهر الماضي</span>
+          <span class="card__label">التقدم العام</span>
+          <strong class="card__value">52%</strong>
+          <span class="card__trend up">+6% هذا الأسبوع</span>
         </article>
         <article class="card card--metric">
-          <span class="card__label">المهام المفتوحة</span>
-          <strong class="card__value">32</strong>
-          <span class="card__trend down">-5 خلال الأسبوع</span>
+          <span class="card__label">حروف الهيراغانا المتقنة</span>
+          <strong class="card__value">38/46</strong>
+          <span class="card__trend up">تمت إضافة 4 حروف جديدة</span>
         </article>
         <article class="card card--metric">
-          <span class="card__label">ساعات العمل</span>
-          <strong class="card__value">1,240</strong>
-          <span class="card__trend up">+12%</span>
+          <span class="card__label">المفردات الجديدة</span>
+          <strong class="card__value">24 كلمة</strong>
+          <span class="card__trend neutral">ثابتة</span>
         </article>
         <article class="card card--metric">
-          <span class="card__label">رضا العملاء</span>
-          <strong class="card__value">4.7/5</strong>
-          <span class="card__trend neutral">ثابت</span>
+          <span class="card__label">أيام الممارسة المتتالية</span>
+          <strong class="card__value">7 أيام</strong>
+          <span class="card__trend up">حافظ على السلسلة!</span>
         </article>
       </section>
 
       <section class="card card--panel" id="tasks" aria-labelledby="tasks-title">
         <div class="card__header">
-          <h2 id="tasks-title">أحدث المهام</h2>
+          <h2 id="tasks-title">آخر الدروس والتمارين</h2>
           <div class="card__filters">
             <select>
-              <option>هذا الأسبوع</option>
-              <option>هذا الشهر</option>
-              <option>آخر 3 أشهر</option>
+              <option>الدروس النشطة</option>
+              <option>الدروس المكتملة</option>
+              <option>الدروس القادمة</option>
             </select>
-            <button class="btn btn--ghost" type="button">تصدير</button>
+            <button class="btn btn--ghost" type="button">تصدير التقدم</button>
           </div>
         </div>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">المهمة</th>
-              <th scope="col">القسم</th>
-              <th scope="col">المسؤول</th>
-              <th scope="col">الموعد النهائي</th>
+              <th scope="col">الدرس</th>
+              <th scope="col">المستوى</th>
+              <th scope="col">المهارة</th>
+              <th scope="col">المدة</th>
               <th scope="col">الحالة</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>إطلاق حملة الإعلانات الممولة</td>
-              <td><span class="chip chip--marketing">تسويق</span></td>
-              <td>ليلى أحمد</td>
-              <td>12 مايو</td>
-              <td><span class="status status--in-progress">قيد التنفيذ</span></td>
+              <td>مقدمة الهيراغانا</td>
+              <td><span class="chip chip--design">أساسيات</span></td>
+              <td>التعرف على الحروف あ い う</td>
+              <td>12 دقيقة</td>
+              <td><span class="status status--done">مكتمل</span></td>
             </tr>
             <tr>
-              <td>تحسين صفحة الهبوط الرئيسية</td>
-              <td><span class="chip chip--design">تصميم</span></td>
-              <td>محمد علاء</td>
-              <td>17 مايو</td>
-              <td><span class="status status--pending">معلّق</span></td>
+              <td>تحية الصباح والمساء</td>
+              <td><span class="chip chip--dev">محادثة</span></td>
+              <td>جمل はじめまして و おはよう</td>
+              <td>18 دقيقة</td>
+              <td><span class="status status--in-progress">قيد الدراسة</span></td>
             </tr>
             <tr>
-              <td>تحليل نتائج الربع الأول</td>
-              <td><span class="chip chip--analytics">تحليلات</span></td>
-              <td>سارة خالد</td>
-              <td>22 مايو</td>
-              <td><span class="status status--done">منجز</span></td>
+              <td>الكانا في الكلمات</td>
+              <td><span class="chip chip--analytics">مفردات</span></td>
+              <td>ربط الحروف بكلمات يومية</td>
+              <td>15 دقيقة</td>
+              <td><span class="status status--pending">للمراجعة</span></td>
             </tr>
             <tr>
-              <td>إعداد دليل الهوية الصوتية</td>
-              <td><span class="chip chip--brand">علامة تجارية</span></td>
-              <td>أحمد حاتم</td>
-              <td>25 مايو</td>
-              <td><span class="status status--in-progress">قيد التنفيذ</span></td>
+              <td>أرقام حتى 20</td>
+              <td><span class="chip chip--brand">قواعد</span></td>
+              <td>أنماط العد اليابانية</td>
+              <td>10 دقائق</td>
+              <td><span class="status status--in-progress">قيد التقدم</span></td>
             </tr>
           </tbody>
         </table>
@@ -123,48 +123,48 @@
       <section class="dashboard__grid">
         <article class="card card--panel" id="team" aria-labelledby="team-title">
           <div class="card__header">
-            <h2 id="team-title">الفريق النشط اليوم</h2>
-            <button class="btn btn--ghost" type="button">عرض الكل</button>
+            <h2 id="team-title">خطة الأسبوع الحالي</h2>
+            <button class="btn btn--ghost" type="button">تعديل الخطة</button>
           </div>
           <ul class="team-list">
             <li>
-              <span class="avatar avatar--pink">س</span>
+              <span class="avatar avatar--pink">ي</span>
               <div>
-                <strong>سارة خالد</strong>
-                <span>مديرة تسويق المحتوى</span>
+                <strong>مراجعة الكانا</strong>
+                <span>15 دقيقة بطاقات تكرار</span>
               </div>
-              <span class="status status--in-progress">متصل</span>
+              <span class="status status--done">منجز</span>
             </li>
             <li>
               <span class="avatar avatar--blue">م</span>
               <div>
-                <strong>محمد علاء</strong>
-                <span>مصمم واجهات</span>
+                <strong>درس المحادثة</strong>
+                <span>تمرين نطق مع المعلم رينا</span>
               </div>
-              <span class="status status--pending">مشغول</span>
+              <span class="status status--pending">اليوم مساءً</span>
             </li>
             <li>
-              <span class="avatar avatar--green">ل</span>
+              <span class="avatar avatar--green">ك</span>
               <div>
-                <strong>ليلى أحمد</strong>
-                <span>أخصائية حملات مدفوعة</span>
+                <strong>كلمات جديدة</strong>
+                <span>10 كلمات عن المواصلات</span>
               </div>
-              <span class="status status--done">منجز</span>
+              <span class="status status--in-progress">جارٍ</span>
             </li>
           </ul>
         </article>
 
         <article class="card card--panel" id="reports" aria-labelledby="reports-title">
           <div class="card__header">
-            <h2 id="reports-title">مؤشرات رئيسية</h2>
+            <h2 id="reports-title">منحنى التقدم الشهري</h2>
             <button class="btn btn--ghost" type="button">تنزيل التقرير</button>
           </div>
           <div class="chart-placeholder" role="img" aria-label="مخطط بياني افتراضي">
             <div class="chart__bars">
-              <span style="height: 70%"></span>
-              <span style="height: 55%"></span>
-              <span style="height: 90%"></span>
-              <span style="height: 65%"></span>
+              <span style="height: 45%"></span>
+              <span style="height: 60%"></span>
+              <span style="height: 75%"></span>
+              <span style="height: 85%"></span>
             </div>
             <div class="chart__labels">
               <span>يناير</span>
@@ -177,24 +177,24 @@
 
         <article class="card card--panel" id="settings" aria-labelledby="settings-title">
           <div class="card__header">
-            <h2 id="settings-title">مركز الإشعارات</h2>
-            <button class="btn btn--ghost" type="button">تعديل</button>
+            <h2 id="settings-title">آخر التنبيهات</h2>
+            <button class="btn btn--ghost" type="button">إدارة التنبيهات</button>
           </div>
           <ul class="notifications">
             <li>
               <span class="dot dot--success"></span>
-              تمت الموافقة على حملة "منتج الصيف".
-              <time datetime="2024-05-10">منذ ساعتين</time>
+              تم فتح درس "التسوق في طوكيو" الآن.
+              <time datetime="2024-05-10">قبل ساعة</time>
             </li>
             <li>
               <span class="dot dot--warning"></span>
-              تذكير: اجتماع مراجعة الأداء بعد ساعتين.
-              <time datetime="2024-05-10T08:00">منذ 30 دقيقة</time>
+              تذكير: اختبار مراجعة الهيراغانا غدًا صباحًا.
+              <time datetime="2024-05-10T08:00">بعد 18 ساعة</time>
             </li>
             <li>
               <span class="dot dot--info"></span>
-              تمت إضافة عضو جديد إلى فريق التسويق.
-              <time datetime="2024-05-09">أمس</time>
+              انضممت إلى غرفة المحادثة الأسبوعية يوم الجمعة.
+              <time datetime="2024-05-09">منذ يوم</time>
             </li>
           </ul>
         </article>
