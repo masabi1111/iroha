@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم - إروها</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="dashboard">
+    <aside class="sidebar" aria-label="قائمة جانبية">
+      <div class="sidebar__brand">إروها</div>
+      <button class="sidebar__toggle" aria-label="إخفاء القائمة">
+        ☰
+      </button>
+      <nav class="sidebar__nav" aria-label="القائمة الرئيسية">
+        <a class="is-active" href="#overview">نظرة عامة</a>
+        <a href="#tasks">المهام</a>
+        <a href="#team">الفريق</a>
+        <a href="#reports">التقارير</a>
+        <a href="#settings">الإعدادات</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a class="btn btn--outline" href="index.html">العودة للرئيسية</a>
+      </div>
+    </aside>
+
+    <div class="dashboard__main">
+      <header class="dashboard__header">
+        <div>
+          <h1>مرحبا، سارة</h1>
+          <p>اطّلع على أحدث مؤشرات أداء مشاريع فريق التسويق.</p>
+        </div>
+        <div class="dashboard__actions">
+          <button class="btn btn--ghost" type="button">+ مهمة جديدة</button>
+          <button class="btn" type="button">مشاركة</button>
+        </div>
+      </header>
+
+      <section class="cards" id="overview" aria-label="مؤشرات أساسية">
+        <article class="card card--metric">
+          <span class="card__label">نسبة الإنجاز</span>
+          <strong class="card__value">76%</strong>
+          <span class="card__trend up">+8% منذ الشهر الماضي</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">المهام المفتوحة</span>
+          <strong class="card__value">32</strong>
+          <span class="card__trend down">-5 خلال الأسبوع</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">ساعات العمل</span>
+          <strong class="card__value">1,240</strong>
+          <span class="card__trend up">+12%</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">رضا العملاء</span>
+          <strong class="card__value">4.7/5</strong>
+          <span class="card__trend neutral">ثابت</span>
+        </article>
+      </section>
+
+      <section class="card card--panel" id="tasks" aria-labelledby="tasks-title">
+        <div class="card__header">
+          <h2 id="tasks-title">أحدث المهام</h2>
+          <div class="card__filters">
+            <select>
+              <option>هذا الأسبوع</option>
+              <option>هذا الشهر</option>
+              <option>آخر 3 أشهر</option>
+            </select>
+            <button class="btn btn--ghost" type="button">تصدير</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">المهمة</th>
+              <th scope="col">القسم</th>
+              <th scope="col">المسؤول</th>
+              <th scope="col">الموعد النهائي</th>
+              <th scope="col">الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>إطلاق حملة الإعلانات الممولة</td>
+              <td><span class="chip chip--marketing">تسويق</span></td>
+              <td>ليلى أحمد</td>
+              <td>12 مايو</td>
+              <td><span class="status status--in-progress">قيد التنفيذ</span></td>
+            </tr>
+            <tr>
+              <td>تحسين صفحة الهبوط الرئيسية</td>
+              <td><span class="chip chip--design">تصميم</span></td>
+              <td>محمد علاء</td>
+              <td>17 مايو</td>
+              <td><span class="status status--pending">معلّق</span></td>
+            </tr>
+            <tr>
+              <td>تحليل نتائج الربع الأول</td>
+              <td><span class="chip chip--analytics">تحليلات</span></td>
+              <td>سارة خالد</td>
+              <td>22 مايو</td>
+              <td><span class="status status--done">منجز</span></td>
+            </tr>
+            <tr>
+              <td>إعداد دليل الهوية الصوتية</td>
+              <td><span class="chip chip--brand">علامة تجارية</span></td>
+              <td>أحمد حاتم</td>
+              <td>25 مايو</td>
+              <td><span class="status status--in-progress">قيد التنفيذ</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="dashboard__grid">
+        <article class="card card--panel" id="team" aria-labelledby="team-title">
+          <div class="card__header">
+            <h2 id="team-title">الفريق النشط اليوم</h2>
+            <button class="btn btn--ghost" type="button">عرض الكل</button>
+          </div>
+          <ul class="team-list">
+            <li>
+              <span class="avatar avatar--pink">س</span>
+              <div>
+                <strong>سارة خالد</strong>
+                <span>مديرة تسويق المحتوى</span>
+              </div>
+              <span class="status status--in-progress">متصل</span>
+            </li>
+            <li>
+              <span class="avatar avatar--blue">م</span>
+              <div>
+                <strong>محمد علاء</strong>
+                <span>مصمم واجهات</span>
+              </div>
+              <span class="status status--pending">مشغول</span>
+            </li>
+            <li>
+              <span class="avatar avatar--green">ل</span>
+              <div>
+                <strong>ليلى أحمد</strong>
+                <span>أخصائية حملات مدفوعة</span>
+              </div>
+              <span class="status status--done">منجز</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card card--panel" id="reports" aria-labelledby="reports-title">
+          <div class="card__header">
+            <h2 id="reports-title">مؤشرات رئيسية</h2>
+            <button class="btn btn--ghost" type="button">تنزيل التقرير</button>
+          </div>
+          <div class="chart-placeholder" role="img" aria-label="مخطط بياني افتراضي">
+            <div class="chart__bars">
+              <span style="height: 70%"></span>
+              <span style="height: 55%"></span>
+              <span style="height: 90%"></span>
+              <span style="height: 65%"></span>
+            </div>
+            <div class="chart__labels">
+              <span>يناير</span>
+              <span>فبراير</span>
+              <span>مارس</span>
+              <span>أبريل</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--panel" id="settings" aria-labelledby="settings-title">
+          <div class="card__header">
+            <h2 id="settings-title">مركز الإشعارات</h2>
+            <button class="btn btn--ghost" type="button">تعديل</button>
+          </div>
+          <ul class="notifications">
+            <li>
+              <span class="dot dot--success"></span>
+              تمت الموافقة على حملة "منتج الصيف".
+              <time datetime="2024-05-10">منذ ساعتين</time>
+            </li>
+            <li>
+              <span class="dot dot--warning"></span>
+              تذكير: اجتماع مراجعة الأداء بعد ساعتين.
+              <time datetime="2024-05-10T08:00">منذ 30 دقيقة</time>
+            </li>
+            <li>
+              <span class="dot dot--info"></span>
+              تمت إضافة عضو جديد إلى فريق التسويق.
+              <time datetime="2024-05-09">أمس</time>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </div>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
