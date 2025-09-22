@@ -21,3 +21,11 @@ if (sidebar && sidebarToggle) {
     sidebarToggle.setAttribute('aria-expanded', (!expanded).toString());
   });
 }
+
+document.querySelectorAll('[data-permission-toggle]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const isActive = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', (!isActive).toString());
+    button.classList.toggle('is-active', !isActive);
+  });
+});

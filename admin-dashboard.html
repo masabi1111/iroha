@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة المسؤول - إروها</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="dashboard dashboard--admin">
+    <aside class="sidebar" aria-label="قائمة جانبية للمسؤول">
+      <div class="sidebar__brand">إروها</div>
+      <button class="sidebar__toggle" type="button" aria-label="إخفاء القائمة">☰</button>
+      <nav class="sidebar__nav" aria-label="روابط لوحة المسؤول">
+        <a class="is-active" href="#admin-overview">نظرة عامة</a>
+        <a href="#member-management">إدارة الأعضاء</a>
+        <a href="#role-management">الأدوار والفرق</a>
+        <a href="#permission-policies">سياسات الصلاحيات</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a class="btn btn--outline" href="index.html">العودة للرئيسية</a>
+      </div>
+    </aside>
+
+    <div class="dashboard__main">
+      <header class="dashboard__header">
+        <div>
+          <h1>مرحبًا، أستاذ خالد</h1>
+          <p>
+            يمكنك إدارة الأعضاء، ضبط الصلاحيات، ومراقبة التغييرات في فريق العمل بكل
+            سهولة.
+          </p>
+        </div>
+        <div class="dashboard__actions">
+          <button class="btn" type="button">دعوة عضو جديد</button>
+          <button class="btn btn--ghost" type="button">إعدادات عامة</button>
+        </div>
+      </header>
+
+      <section class="cards" id="admin-overview" aria-label="مؤشرات عامة">
+        <article class="card card--metric">
+          <span class="card__label">الأعضاء النشطون</span>
+          <strong class="card__value">128</strong>
+          <span class="card__trend up">+12 هذا الشهر</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">طلبات الانضمام المعلقة</span>
+          <strong class="card__value">7</strong>
+          <span class="card__trend neutral">تم قبول 3 اليوم</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">عدد الأدوار</span>
+          <strong class="card__value">5 أدوار</strong>
+          <span class="card__trend up">تمت إضافة دور جديد</span>
+        </article>
+        <article class="card card--metric">
+          <span class="card__label">تقارير الأنشطة</span>
+          <strong class="card__value">18 تقريرًا</strong>
+          <span class="card__trend down">-4 عن الأسبوع الماضي</span>
+        </article>
+      </section>
+
+      <section class="card card--panel" id="member-management" aria-labelledby="member-management-title">
+        <div class="card__header">
+          <div>
+            <h2 id="member-management-title">إدارة الأعضاء</h2>
+            <p class="card__subtitle">
+              راقب حالة الحسابات بسرعة، قم بتعديل الأدوار، أو أرسل دعوات جديدة.
+            </p>
+          </div>
+          <div class="member-filters">
+            <label class="input-icon">
+              <span aria-hidden="true">🔍</span>
+              <input type="search" placeholder="البحث باسم العضو أو بريده" />
+            </label>
+            <select aria-label="تصفية حسب الحالة">
+              <option>جميع الحالات</option>
+              <option>نشط</option>
+              <option>بانتظار التفعيل</option>
+              <option>مقيّد</option>
+            </select>
+            <select aria-label="تصفية حسب الدور">
+              <option>جميع الأدوار</option>
+              <option>مسؤول</option>
+              <option>مشرف محتوى</option>
+              <option>معلم</option>
+              <option>طالب</option>
+            </select>
+            <button class="btn btn--ghost btn--small" type="button">تصدير القائمة</button>
+          </div>
+        </div>
+        <div class="table-wrapper" role="region" aria-live="polite">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">العضو</th>
+                <th scope="col">الدور الحالي</th>
+                <th scope="col">الحالة</th>
+                <th scope="col">أبرز الصلاحيات</th>
+                <th scope="col">إجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="member-cell">
+                    <span class="avatar avatar--pink">ل</span>
+                    <div>
+                      <strong>ليلى الحربي</strong>
+                      <span class="member-email">layla@iroha.co</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge--accent">مسؤول فرعي</span></td>
+                <td><span class="status status--done">نشط</span></td>
+                <td>إدارة المستخدمين، الموافقات، إعدادات الفوترة</td>
+                <td>
+                  <div class="member-actions">
+                    <button class="btn btn--ghost btn--small" type="button">تعديل الدور</button>
+                    <button class="btn btn--ghost btn--small" type="button">إيقاف مؤقت</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="member-cell">
+                    <span class="avatar avatar--blue">س</span>
+                    <div>
+                      <strong>سامي العتيبي</strong>
+                      <span class="member-email">sami@iroha.co</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge--info">مشرف محتوى</span></td>
+                <td><span class="status status--in-progress">بانتظار الموافقة</span></td>
+                <td>نشر الدروس، مراجعة التعليقات</td>
+                <td>
+                  <div class="member-actions">
+                    <button class="btn btn--ghost btn--small" type="button">قبول الطلب</button>
+                    <button class="btn btn--ghost btn--small" type="button">إعادة تعيين الدور</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="member-cell">
+                    <span class="avatar avatar--green">م</span>
+                    <div>
+                      <strong>مها الياباني</strong>
+                      <span class="member-email">maha@iroha.co</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge--success">معلمة</span></td>
+                <td><span class="status status--done">نشط</span></td>
+                <td>بث مباشر، إضافة تمارين، تقييم الواجبات</td>
+                <td>
+                  <div class="member-actions">
+                    <button class="btn btn--ghost btn--small" type="button">تطوير الصلاحيات</button>
+                    <button class="btn btn--ghost btn--small" type="button">إرسال رسالة</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="member-cell">
+                    <span class="avatar avatar--purple">ر</span>
+                    <div>
+                      <strong>رامي السالم</strong>
+                      <span class="member-email">rami@iroha.co</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge">طالب</span></td>
+                <td><span class="status status--pending">مقيّد</span></td>
+                <td>الوصول إلى الدروس المجدولة، المنتدى</td>
+                <td>
+                  <div class="member-actions">
+                    <button class="btn btn--ghost btn--small" type="button">رفع التقييد</button>
+                    <button class="btn btn--ghost btn--small" type="button">حذف الحساب</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card card--panel" id="role-management" aria-labelledby="role-management-title">
+        <div class="card__header">
+          <div>
+            <h2 id="role-management-title">الأدوار والفرق</h2>
+            <p class="card__subtitle">
+              خصصي الأدوار حسب احتياج فرق العمل واضبطي الصلاحيات الافتراضية لكل دور.
+            </p>
+          </div>
+          <button class="btn btn--ghost btn--small" type="button">إضافة دور مخصص</button>
+        </div>
+        <div class="role-cards" role="list">
+          <article class="role-card" role="listitem">
+            <header>
+              <h3>مسؤول رئيسي</h3>
+              <span class="badge badge--accent">وصول كامل</span>
+            </header>
+            <ul>
+              <li>إدارة إعدادات المنصة العامة</li>
+              <li>إضافة وحذف مستخدمين</li>
+              <li>الوصول للتقارير الحساسة</li>
+            </ul>
+            <button class="btn btn--ghost btn--small" type="button">تعيين كدور افتراضي</button>
+          </article>
+          <article class="role-card" role="listitem">
+            <header>
+              <h3>مشرف محتوى</h3>
+              <span class="badge badge--info">تحكم متوسط</span>
+            </header>
+            <ul>
+              <li>نشر وتعديل الدروس</li>
+              <li>إدارة ملفات الوسائط</li>
+              <li>مراجعة تعليقات الطلاب</li>
+            </ul>
+            <button class="btn btn--ghost btn--small" type="button">تعيين كدور افتراضي</button>
+          </article>
+          <article class="role-card" role="listitem">
+            <header>
+              <h3>الدعم الفني</h3>
+              <span class="badge badge--neutral">صلاحيات محدودة</span>
+            </header>
+            <ul>
+              <li>الرد على تذاكر الدعم</li>
+              <li>إرسال تنبيهات النظام</li>
+              <li>إدارة مركز المساعدة</li>
+            </ul>
+            <button class="btn btn--ghost btn--small" type="button">تعيين كدور افتراضي</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="card card--panel" id="permission-policies" aria-labelledby="permission-policies-title">
+        <div class="card__header">
+          <div>
+            <h2 id="permission-policies-title">سياسات الصلاحيات التفصيلية</h2>
+            <p class="card__subtitle">
+              فعّلي أو عطّلي الصلاحيات بسرعة عبر الجداول التالية، ويتم تطبيقها مباشرةً على الأدوار المرتبطة.
+            </p>
+          </div>
+          <button class="btn btn--ghost btn--small" type="button">حفظ التعديلات</button>
+        </div>
+        <div class="permissions-grid">
+          <article class="permissions-group">
+            <header>
+              <h3>إدارة المحتوى</h3>
+              <p>يتحكم في عمليات إنشاء ونشر المواد التعليمية.</p>
+            </header>
+            <div class="permissions-list">
+              <button
+                class="permission-toggle is-active"
+                type="button"
+                data-permission-toggle
+                aria-pressed="true"
+              >نشر الدروس</button>
+              <button
+                class="permission-toggle is-active"
+                type="button"
+                data-permission-toggle
+                aria-pressed="true"
+              >تعديل الدروس المنشورة</button>
+              <button
+                class="permission-toggle"
+                type="button"
+                data-permission-toggle
+                aria-pressed="false"
+              >حذف المحتوى نهائيًا</button>
+            </div>
+          </article>
+          <article class="permissions-group">
+            <header>
+              <h3>إدارة المستخدمين</h3>
+              <p>إجراءات الموافقة، الإيقاف، ومنح الصلاحيات.</p>
+            </header>
+            <div class="permissions-list">
+              <button
+                class="permission-toggle is-active"
+                type="button"
+                data-permission-toggle
+                aria-pressed="true"
+              >قبول طلبات التسجيل</button>
+              <button
+                class="permission-toggle"
+                type="button"
+                data-permission-toggle
+                aria-pressed="false"
+              >إعادة تعيين كلمة المرور</button>
+              <button
+                class="permission-toggle"
+                type="button"
+                data-permission-toggle
+                aria-pressed="false"
+              >تفعيل المصادقة المتعددة</button>
+            </div>
+          </article>
+          <article class="permissions-group">
+            <header>
+              <h3>إعدادات الدفع</h3>
+              <p>التحكم بالاشتراكات والخطط المالية.</p>
+            </header>
+            <div class="permissions-list">
+              <button
+                class="permission-toggle"
+                type="button"
+                data-permission-toggle
+                aria-pressed="false"
+              >تحديث الأسعار</button>
+              <button
+                class="permission-toggle is-active"
+                type="button"
+                data-permission-toggle
+                aria-pressed="true"
+              >عرض تقارير الإيرادات</button>
+              <button
+                class="permission-toggle"
+                type="button"
+                data-permission-toggle
+                aria-pressed="false"
+              >إدارة بطاقات الدفع المخزنة</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
