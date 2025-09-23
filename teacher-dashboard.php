@@ -1,3 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/includes/data-providers.php';
+
+if (!function_exists('e')) {
+    function e(string $value): string
+    {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
+}
+
+$metrics = getTeacherMetrics();
+$scheduledItems = getScheduledContent();
+?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
@@ -43,26 +59,18 @@
       </header>
 
       <section class="cards" id="teacher-overview" aria-label="إحصائيات عامة">
-        <article class="card card--metric">
-          <span class="card__label">عدد الطلاب المسجلين</span>
-          <strong class="card__value">42 طالبًا</strong>
-          <span class="card__trend up">+5 هذا الشهر</span>
-        </article>
-        <article class="card card--metric">
-          <span class="card__label">دروس منشورة</span>
-          <strong class="card__value">18 درسًا</strong>
-          <span class="card__trend neutral">درس جديد قيد الإعداد</span>
-        </article>
-        <article class="card card--metric">
-          <span class="card__label">كويزات قيد المتابعة</span>
-          <strong class="card__value">6 كويزات</strong>
-          <span class="card__trend up">تم تقييم 2 مؤخرًا</span>
-        </article>
-        <article class="card card--metric">
-          <span class="card__label">تمارين تحتاج مراجعة</span>
-          <strong class="card__value">4 تمارين</strong>
-          <span class="card__trend down">-3 عن الأسبوع الماضي</span>
-        </article>
+        <?php foreach ($metrics as $metric): ?>
+          <?php $trendType = trim((string)($metric['trend_type'] ?? 'neutral')); ?>
+          <article class="card card--metric">
+            <span class="card__label"><?= e($metric['label'] ?? '') ?></span>
+            <strong class="card__value"><?= e($metric['value'] ?? '') ?></strong>
+            <?php if (!empty($metric['trend'])): ?>
+              <span class="card__trend <?= $trendType !== '' ? e($trendType) : 'neutral' ?>">
+                <?= e($metric['trend']) ?>
+              </span>
+            <?php endif; ?>
+          </article>
+        <?php endforeach; ?>
       </section>
 
       <section class="card card--panel" id="quick-actions" aria-labelledby="quick-actions-title">
@@ -313,24 +321,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>الدرس المباشر: مراجعة كانا</td>
-              <td><span class="chip chip--design">درس</span></td>
-              <td>الاثنين 7 مساءً</td>
-              <td><span class="status status--in-progress">تمت الجدولة</span></td>
-            </tr>
-            <tr>
-              <td>كويز: الحروف الأساسية</td>
-              <td><span class="chip chip--dev">كويز</span></td>
-              <td>الثلاثاء 5 مساءً</td>
-              <td><span class="status status--pending">بانتظار النشر</span></td>
-            </tr>
-            <tr>
-              <td>تمرين: تسجيل التحية</td>
-              <td><span class="chip chip--qa">تمرين</span></td>
-              <td>الخميس 9 مساءً</td>
-              <td><span class="status status--done">مفعل</span></td>
-            </tr>
+            <?php foreach ($scheduledItems as $item): ?>
+              <?php
+                $chipVariant = trim((string)($item['chip_variant'] ?? ''));
+                $statusVariant = trim((string)($item['status_variant'] ?? ''));
+              ?>
+              <tr>
+                <td><?= e($item['title'] ?? '') ?></td>
+                <td>
+                  <span class="chip<?= $chipVariant !== '' ? ' chip--' . e($chipVariant) : '' ?>">
+                    <?= e($item['type'] ?? '') ?>
+                  </span>
+                </td>
+                <td><?= e($item['scheduled_at'] ?? '') ?></td>
+                <td>
+                  <span class="status<?= $statusVariant !== '' ? ' status--' . e($statusVariant) : '' ?>">
+                    <?= e($item['status'] ?? '') ?>
+                  </span>
+                </td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </section>
